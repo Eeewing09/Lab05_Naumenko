@@ -79,28 +79,73 @@
 //         Console.WriteLine("Продвинутый уровень");
 //         break;
 // }
-// Задача А
-int month = 12;
+// // Задача А
+// int month = 12;
 
-string season = month switch {
-    12 or 1 or 2 => "Зима",
-    3 or 4 or 5  => "Весна",
-    6 or 7 or 8  => "Лето",
-    9 or 10 or 11 => "Осень",
-    _            => "Неверный месяц"
+// string season = month switch {
+//     12 or 1 or 2 => "Зима",
+//     3 or 4 or 5  => "Весна",
+//     6 or 7 or 8  => "Лето",
+//     9 or 10 or 11 => "Осень",
+//     _            => "Неверный месяц"
+// };
+
+// Console.WriteLine(season);
+// // Задача В
+// int age1 = 20;
+
+// string ctg = age1 switch {
+//     < 0           => "Ошибка",
+//     >= 0 and <= 6  => "Ребёнок",
+//     >= 7 and <= 17 => "Подросток",
+//     >= 18 and <= 64 => "Взрослый",
+//     >= 65         => "Пенсионер"
+// };
+
+// Console.WriteLine(ctg);
+// Console.Write("Введите свою фамилию: ");
+// string surname = Console.ReadLine()!.Trim();
+// if (string.IsNullOrEmpty(surname)) {
+// Console.WriteLine("Фамилия не введена. Завершение работы.");
+// return;
+// }
+// Random rnd = new(surname.GetHashCode() + DateTime.Now.DayOfYear);
+// var assigned = Enumerable.Range(1, 10)
+// .OrderBy(_ => rnd.Next())
+// .Take(2)
+// .OrderBy(x => x)
+// .ToList();
+// Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
+
+// Var 2
+int score = int.Parse(Console.ReadLine());
+
+string result = score switch {
+    >= 0 and <= 39  => "Неудовлетворительно",
+    >= 40 and <= 59 => "Удовлетворительно",
+    >= 60 and <= 79 => "Хорошо",
+    >= 80 and <= 100 => "Отлично",
+    _               => "Ошибка"
 };
 
-Console.WriteLine(season);
-// Задача В
-int age1 = 20;
+Console.WriteLine(result);
+// Var 6
+Console.Write("Введите роль пользователя: ");
+string role = Console.ReadLine();
 
-string ctg = age1 switch {
-    < 0           => "Ошибка",
-    >= 0 and <= 6  => "Ребёнок",
-    >= 7 and <= 17 => "Подросток",
-    >= 18 and <= 64 => "Взрослый",
-    >= 65         => "Пенсионер"
+Console.Write("Аккаунт подтверждён? (true/false): ");
+bool isC = bool.Parse(Console.ReadLine()); 
+
+string result1 = role switch {
+    "admin" => "Полный доступ",
+
+    "teacher" when !isC => "Требуется подтверждение",
+    
+    "teacher" => "Доступ преподавателя",
+    "user"    => "Ограниченный доступ",
+    _         => "Доступ запрещён"
 };
 
-Console.WriteLine(ctg);
+Console.WriteLine(result1);
+
 
