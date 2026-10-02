@@ -118,34 +118,47 @@
 // Console.WriteLine($"Задачи: №{assigned[0]} и №{assigned[1]}");
 
 // Var 2
-int score = int.Parse(Console.ReadLine());
+// int score = int.Parse(Console.ReadLine());
 
-string result = score switch {
-    >= 0 and <= 39  => "Неудовлетворительно",
-    >= 40 and <= 59 => "Удовлетворительно",
-    >= 60 and <= 79 => "Хорошо",
-    >= 80 and <= 100 => "Отлично",
-    _               => "Ошибка"
-};
+// string result = score switch {
+//     >= 0 and <= 39  => "Неудовлетворительно",
+//     >= 40 and <= 59 => "Удовлетворительно",
+//     >= 60 and <= 79 => "Хорошо",
+//     >= 80 and <= 100 => "Отлично",
+//     _               => "Ошибка"
+// };
 
-Console.WriteLine(result);
-// Var 6
-Console.Write("Введите роль пользователя: ");
-string role = Console.ReadLine();
+// Console.WriteLine(result);
+//  Var 6
+// Console.Write("Введите роль пользователя: ");
+// string role = Console.ReadLine();
 
-Console.Write("Аккаунт подтверждён? (true/false): ");
-bool isC = bool.Parse(Console.ReadLine()); 
+// Console.Write("Аккаунт подтверждён? (true/false): ");
+// bool isC = bool.Parse(Console.ReadLine()); 
 
-string result1 = role switch {
-    "admin" => "Полный доступ",
+// string result1 = role switch {
+//     "admin" => "Полный доступ",
 
-    "teacher" when !isC => "Требуется подтверждение",
+//     "teacher" when !isC => "Требуется подтверждение",
     
-    "teacher" => "Доступ преподавателя",
-    "user"    => "Ограниченный доступ",
-    _         => "Доступ запрещён"
+//     "teacher" => "Доступ преподавателя",
+//     "user"    => "Ограниченный доступ",
+//     _         => "Доступ запрещён"
+// };
+
+// Console.WriteLine(result1);
+
+Console.Write("Введите число: ");
+int number = int.Parse(Console.ReadLine());
+
+string result2 = number switch {
+    < 0 => "Отрицательное",
+    1 or 2 or 3 => "Маленькое число",
+    >= 0 and <= 9 => "Однозначное",
+    >= 10 and <= 99 => "Двузначное",
+    _  => "Трёхзначное или больше"
 };
 
-Console.WriteLine(result1);
+Console.WriteLine(result2);
 
 
